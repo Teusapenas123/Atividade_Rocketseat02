@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quicklist · Compras da semana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="logo" aria-label="Quicklist">
+    <svg viewBox="0 0 24 20" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="3.5" rx="1.75" />
+      <rect x="2" y="8.2" width="13" height="3.5" rx="1.75" />
+      <rect x="2" y="14.5" width="20" height="3.5" rx="1.75" />
+    </svg>
+    <span>quicklist</span>
+  </header>
+
+  <main class="app">
+    <button class="back" type="button" onclick="history.back()">← Voltar</button>
+
+    <h1>Compras da semana</h1>
+
+    <form id="item-form" class="add" novalidate>
+      <input id="item-input" type="text" placeholder="Adicione um novo item" aria-label="Novo item" autocomplete="off" />
+      <button type="submit" class="btn-add">Adicionar item</button>
+    </form>
+    <p id="error" class="error" role="alert" hidden>Digite o nome do item antes de adicionar.</p>
+
+    <ul id="list" class="list"></ul>
+
+    <div id="alert" class="alert" role="status" aria-live="polite" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 11v6M12 7.5v.01" stroke="#c9304a" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>O item foi removido da lista</span>
+      <button type="button" id="alert-close" aria-label="Fechar aviso">✕</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
